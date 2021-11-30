@@ -42,7 +42,6 @@ class ingredientsView extends View {
   }
 
   _restructurer(updateTo) {
-    console.log(this._inputs);
     if (updateTo < 4) {
       this._inputs.style.gridRow = '3 / span 2';
     }

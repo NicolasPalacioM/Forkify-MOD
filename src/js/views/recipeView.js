@@ -3,8 +3,6 @@ import View from './view.js';
 import icons from 'url:../../img/icons.svg';
 import { Fraction } from 'fractional';
 
-console.log(Fraction);
-
 class RecipeView extends View {
   _parentElement = document.querySelector('.recipe');
   _errorMessage = 'We could not find that recipe. Please, try another one!';
@@ -18,7 +16,6 @@ class RecipeView extends View {
     this._parentElement.addEventListener('click', function (e) {
       const btn = e.target.closest('.btn--tiny');
       if (!btn) return;
-      console.log(btn);
       const { updateTo } = btn.dataset;
 
       if (+updateTo > 0) handler(+updateTo);

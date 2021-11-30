@@ -30,8 +30,6 @@ class inputsView extends View {
       if (el.dataset?.switchTo) return el;
     });
 
-    console.log(ingredientNum);
-
     inputArr.forEach(el => {
       let num;
       if (ing) num = ing.textContent.trim();
@@ -51,7 +49,6 @@ class inputsView extends View {
         const error = document.createElement('p');
         error.textContent =
           'Wrong format. Please, use: Number or Number and unit';
-        console.log(error);
         error.classList.add('upload__error');
 
         if (
