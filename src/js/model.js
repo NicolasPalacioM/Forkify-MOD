@@ -159,7 +159,7 @@ const clearBookmarks = function () {
 // clearBookmarks();
 
 export const updateIngredients = function (ingredientNum) {
-  this.state.ingredientNum = ingredientNum;
+  state.ingredientNum = ingredientNum;
 };
 
 export const verifyQuantity = function () {};
