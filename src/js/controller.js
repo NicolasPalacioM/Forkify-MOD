@@ -24,7 +24,6 @@ import weekmealsView from './views/weekmealsView.js';
 const controlRecipes = async function () {
   try {
     const id = window.location.hash.slice(1);
-    console.log(id);
 
     if (!id) return;
     recipeView.renderSpinner();
@@ -57,7 +56,6 @@ const controlSearchResults = async function () {
 
     // 2) Load search results
     await model.loadSearchResults(query);
-    console.log(model.state.search.results);
 
     // 3) Render results
     // resultsView.render(model.state.search.results);
@@ -71,7 +69,6 @@ const controlSearchResults = async function () {
 };
 
 const controlPagination = function (goToPage) {
-  console.log('Pag controller');
   // 1) Render NEW results
   resultsView.render(model.getSearchResultsPage(goToPage));
 
@@ -82,14 +79,13 @@ const controlPagination = function (goToPage) {
 const controlServings = function (newServings) {
   // Update the recipe servings (in state)
   model.updateServings(newServings);
-  console.log(newServings);
+
   // Update the recipe view
   // recipeView.render(model.state.recipe);
   recipeView.update(model.state.recipe);
 };
 
 const controlAddBookmark = function () {
-  console.log(model.state.recipe);
   // 1) Add or remove bookmark
   if (!model.state.recipe.bookmarked) model.addBookmark(model.state.recipe);
   else model.deleteBookmark(model.state.recipe.id);
@@ -105,7 +101,6 @@ const controlAddWeekmeal = function (day) {
   // 1) Add to weekdays
   model.addWeekmeal(model.state.recipe, day);
 
-  console.log(model.state.weekmeals);
   // 2) Render weekdays
   weekmealsView.render(model.state.weekmeals);
 };
@@ -126,14 +121,12 @@ const controlBookmarks = function () {
 };
 
 const controlAddRecipe = async function (newRecipe, ingredients) {
-  // console.log(newRecipe);
   try {
     // Show loading spinner
     addRecipeView.renderSpinner();
 
     // Upload the new recipe data
     await model.uploadRecipe(newRecipe, ingredients);
-    console.log(model.state.recipe);
 
     // Render recipe
     recipeView.render(model.state.recipe);
@@ -159,9 +152,6 @@ const controlAddRecipe = async function (newRecipe, ingredients) {
 
 const controlIngredients = function (adjust) {
   model.updateIngredients(adjust);
-
-  console.log(model.state);
-  console.log(1);
 
   ingredientsView.render(model.state.ingredientNum);
 };
