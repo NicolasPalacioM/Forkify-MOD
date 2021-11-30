@@ -11,11 +11,11 @@
   "author": "Nicolas Palacio",
   "license": "ISC",
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.0.1",
-    "fractional": "^1.0.0"
+    "@parcel/transformer-sass": "^2.0.1"
   },
   "dependencies": {
     "core-js": "^3.18.1",
+    "fracty": "^1.0.9",
     "parcel": "^2.0.1",
     "regenerator-runtime": "^0.13.9",
     "sass": "^1.42.1"
